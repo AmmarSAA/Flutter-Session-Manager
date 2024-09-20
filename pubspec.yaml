@@ -1,5 +1,5 @@
 name: session_manager
-description: "A new Flutter project."
+description: "A simple and efficient singleton class for managing session data in Flutter applications using the shared_preferences package. This SessionManager allows you to easily store, retrieve, and manage session data of various types."
 publish_to: 'none'
 version: 0.1.0
 
