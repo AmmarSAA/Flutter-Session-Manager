@@ -1,3 +1,21 @@
+/*+------------------------------------------------------------------------------+*/
+/*|                            © 2024 Syed Ammar Ahmed                           |*/
+/*+------------------------------------------------------------------------------+*/
+/*+------------------------------------------------------------------------------+*/
+/*| File: session_manager.dart                                                   |*/
+/*| Path: lib/utils/session_manager.dart                                         |*/
+/*| Author: Syed Ammar Ahmed                                                     |*/
+/*| Content: Session Manager                                                     |*/
+/*| Output: Implement Session Manager                                            |*/
+/*| Description: Manage the session of the user                                  |*/
+/*| - Save session data                                                          |*/
+/*| - Retrieve session data                                                      |*/
+/*| - Check if a session key exists                                              |*/
+/*| - Remove a specific session key                                              |*/
+/*| - Clear the entire session                                                   |*/
+/*| - Update (reload) preferences                                                |*/
+/*+------------------------------------------------------------------------------+*/
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
@@ -75,9 +93,10 @@ class SessionManager {
   }
 
   /// Method to clear the entire session
-  Future<void> clear() async {
+  Future<bool> clear() async {
     await _initPrefs();
     await _prefs!.clear();
+    return true;
   }
 
   /// Method to update (reload) preferences, though it happens automatically
